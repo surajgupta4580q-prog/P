@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irha sweetheart ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+cursor:none;
+}
+
+body{
+background:#04010b;
+overflow:hidden;
+color:white;
+perspective:1000px;
+}
+
+/* VIDEO INTRO */
+
+#introVideo{
+position:fixed;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:99999;
+background:black;
+}
+
+/* MAIN */
+
+#mainSite{
+display:none;
+}
+
+/* BACKGROUND */
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top right,#ff00aa55,transparent),
+radial-gradient(circle at bottom left,#7a00ff66,transparent),
+#04010b;
+z-index:-20;
+}
+
+/* PARTICLES */
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-19;
+}
+
+.particles span{
+position:absolute;
+display:block;
+animation:float 15s linear infinite;
+opacity:0.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+10%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) rotate(720deg);
+opacity:0;
+}
+}
+
+/* RAIN */
+
+.rain{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-18;
+}
+
+.drop{
+position:absolute;
+width:2px;
+height:80px;
+background:linear-gradient(transparent,#ffffff88);
+animation:rain 1s linear infinite;
+}
+
+@keyframes rain{
+from{
+transform:translateY(-100px);
+}
+to{
+transform:translateY(120vh);
+}
+}
+
+/* HEART CURSOR */
+
+.cursor{
+position:fixed;
+font-size:24px;
+pointer-events:none;
+animation:fade 1s forwards;
+z-index:9999;
+}
+
+@keyframes fade{
+to{
+opacity:0;
+transform:translateY(-20px);
+}
+}
+
+/* PAGE */
+
+.page{
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:30px;
+text-align:center;
+overflow-y:auto;
+position:absolute;
+top:0;
+left:0;
+transform-style:preserve-3d;
+}
+
+.active{
+display:flex;
+animation:show 1s;
+}
+
+@keyframes show{
+from{
+opacity:0;
+transform:scale(1.08) rotateX(10deg);
+}
+to{
+opacity:1;
+transform:scale(1) rotateX(0deg);
+}
+}
+
+/* TITLES */
+
+.title{
+font-size:6rem;
+background:linear-gradient(90deg,#ff5fd2,#fff,#ff9bf0);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:30px;
+}
+
+.text{
+font-size:2rem;
+line-height:2.5;
+max-width:1100px;
+color:#ffe6fb;
+}
+
+/* BUTTON */
+
+.btn{
+margin-top:45px;
+padding:22px 60px;
+border:none;
+border-radius:60px;
+background:linear-gradient(45deg,#ff009d,#ff66d9);
+color:white;
+font-size:1.4rem;
+font-weight:700;
+cursor:pointer;
+box-shadow:0 0 25px rgba(255,0,157,0.5);
+transition:0.4s;
+animation:pulse 2s infinite;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+/* GAME */
+
+.gameArea{
+position:relative;
+width:100%;
+height:60vh;
+overflow:hidden;
+margin-top:30px;
+}
+
+.tapHeart{
+position:absolute;
+font-size:50px;
+cursor:pointer;
+animation:moveHeart 6s linear infinite;
+}
+
+@keyframes moveHeart{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-120vh);
+}
+}
+
+/* GALLERY */
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:35px;
+margin-top:40px;
+perspective:1000px;
+}
+
+.card{
+width:320px;
+height:450px;
+border-radius:35px;
+overflow:hidden;
+position:relative;
+animation:updown 5s infinite ease-in-out;
+box-shadow:0 0 40px rgba(255,255,255,0.15);
+transform-style:preserve-3d;
+}
+
+.card:nth-child(2){
+animation-delay:1s;
+}
+
+.card:nth-child(3){
+animation-delay:2s;
+}
+
+@keyframes updown{
+0%{transform:translateY(0px) rotateY(0deg);}
+50%{transform:translateY(-18px) rotateY(8deg);}
+100%{transform:translateY(0px) rotateY(0deg);}
+}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:1s;
+}
+
+.card:hover img{
+transform:scale(1.1);
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+width:100%;
+padding:20px;
+font-size:1.5rem;
+background:linear-gradient(transparent,#000);
+}
+
+/* CHAT */
+
+.chat{
+margin-top:40px;
+width:100%;
+max-width:850px;
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+
+.msg{
+padding:22px 26px;
+border-radius:25px;
+font-size:1.5rem;
+max-width:80%;
+display:none;
+}
+
+.left{
+align-self:flex-start;
+background:#1f1133;
+}
+
+.right{
+align-self:flex-end;
+background:#ff009d;
+}
+
+/* LETTER */
+
+.letter{
+margin-top:40px;
+padding:50px;
+max-width:1000px;
+background:rgba(255,255,255,0.08);
+border-radius:35px;
+backdrop-filter:blur(16px);
+font-size:1.7rem;
+line-height:2.6;
+color:#ffe8fb;
+}
+
+/* TIMER */
+
+.timer{
+font-size:4rem;
+margin-top:30px;
+font-weight:700;
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#140021;
+padding:40px;
+border-radius:30px;
+display:none;
+z-index:999;
+box-shadow:0 0 40px rgba(255,0,157,0.5);
+font-size:1.7rem;
+text-align:center;
+max-width:90%;
+}
+
+/* FINAL */
+
+.final{
+font-size:6rem;
+font-family:'Dancing Script',cursive;
+background:linear-gradient(90deg,#ff5fd2,#fff,#ff9bf0);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.title{
+font-size:3.5rem;
+}
+
+.text{
+font-size:1.25rem;
+}
+
+.btn{
+font-size:1rem;
+padding:18px 35px;
+}
+
+.card{
+width:90%;
+max-width:330px;
+height:430px;
+}
+
+.overlay{
+font-size:1rem;
+}
+
+.msg{
+font-size:1rem;
+}
+
+.letter{
+font-size:1.15rem;
+padding:28px;
+}
+
+.final{
+font-size:3.5rem;
+}
+
+.timer{
+font-size:2.2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO VIDEO -->
+
+<video id="introVideo" autoplay muted>
+<source src="intro.mp4" type="video/mp4">
+</video>
+
+<!-- MAIN WEBSITE -->
+
+<div id="mainSite">
+
+<div class="bg"></div>
+
+<div class="particles"></div>
+
+<div class="rain"></div>
+
+<!-- PAGE 1 -->
+
+<section class="page active">
+
+<h1 class="title">Hey Irha ✨</h1>
+
+<p class="text" id="typing"></p>
+
+<button class="btn" onclick="nextPage()">
+Enter Carefully 🎁
+</button>
+
+</section>
+
+<!-- PAGE 2 -->
+
+<section class="page">
+
+<h1 class="title">Time Since I Met Someone Special ⏳</h1>
+
+<div class="timer" id="timer">
+000 Days ❤️
+</div>
+
+<button class="btn" onclick="nextPage()">
+Continue 💖
+</button>
+
+</section>
+
+<!-- PAGE 3 -->
+
+<section class="page">
+
+<h1 class="title">Mini Heart Game 💖</h1>
+
+<p class="text">
+Catch hearts 😭✨
+</p>
+
+<div class="gameArea" id="gameArea"></div>
+
+<h2 id="score">Score: 0</h2>
+
+<button class="btn" onclick="nextPage()">
+Continue 🎮
+</button>
+
+</section>
+
+<!-- PAGE 4 -->
+
+<section class="page">
+
+<h1 class="title">The Prettiest Girl Ever 💖</h1>
+
+<div class="gallery">
+
+<div class="card">
+<img src="photo1.jpg">
+<div class="overlay">Ye smile illegal 😭❤️</div>
+</div>
+
+<div class="card">
+<img src="photo2.jpg">
+<div class="overlay">Too pretty 👀✨</div>
+</div>
+
+<div class="card">
+<img src="photo3.jpg">
+<div class="overlay">Princess vibes 👑</div>
+</div>
+
+</div>
+
+<button class="btn" onclick="nextPage()">
+Next ✨
+</button>
+
+</section>
+
+<!-- PAGE 5 -->
+
+<section class="page">
+
+<h1 class="title">Average Conversation 😭</h1>
+
+<div class="chat">
+
+<div class="msg left">Aap cute ho 😭❤️</div>
+<div class="msg right">Shut upppp 😭</div>
+<div class="msg left">Sach bol raha hoon 👀</div>
+<div class="msg right">Aap bhi acche ho 😭✨</div>
+<div class="msg left">Bas acche...? 😭</div>
+
+</div>
+
+<button class="btn" onclick="nextPage()">
+Voice Note 🎤
+</button>
+
+</section>
+
+<!-- PAGE 6 -->
+
+<section class="page">
+
+<h1 class="title">Voice Note 🎧</h1>
+
+<button class="btn" onclick="document.getElementById('voice').play()">
+Play Voice Message 💖
+</button>
+
+<audio id="voice">
+<source src="voice.mp3" type="audio/mp3">
+</audio>
+
+<button class="btn" onclick="nextPage()">
+Continue ✨
+</button>
+
+</section>
+
+<!-- PAGE 7 -->
+
+<section class="page">
+
+<h1 class="title">Secret Letter 💌</h1>
+
+<div class="letter">
+
+Irhaaaa 😭❤️<br><br>
+
+Sach bolu...?  
+Aap itni cute kyun ho yaar 😭✨<br><br>
+
+Matlab jab bhi aapka message aata hai na,
+automatic stupid si smile aa jati hai 😭💖<br><br>
+
+Aur aapki smile...
+dangerous level cute hai 😤❤️<br><br>
+
+Waise toh hum bestfriends hain,
+but honestly aap mere liye thodi zyada special ho 🌸<br><br>
+
+Happy Birthdayyyy Princess 👑🎂✨
+
+</div>
+
+<button class="btn" onclick="showPopup()">
+Open Hidden Secret 👀
+</button>
+
+<button class="btn" onclick="nextPage()">
+Final Page 🌙
+</button>
+
+</section>
+
+<!-- PAGE 8 -->
+
+<section class="page">
+
+<h1 class="final">Thank You For Existing ❤️</h1>
+
+<p class="text">
+Aap genuinely meri life ke cutest parts mein se ek ho ✨😭
+</p>
+
+<button class="btn" onclick="restartPages()">
+Replay Memories ✨
+</button>
+
+</section>
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+👀❤️<br><br>
+
+Lowkey...<br>
+I think I like you a little too much 😭✨
+
+<br><br>
+
+<button class="btn" onclick="closePopup()">
+Close
+</button>
+
+</div>
+
+<!-- MUSIC -->
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+</div>
+
+<script>
+
+/* INTRO VIDEO */
+
+const intro=document.getElementById("introVideo");
+
+intro.onended=()=>{
+
+intro.style.display="none";
+
+document.getElementById("mainSite").style.display="block";
+
+};
+
+/* PARTICLES */
+
+let particles=document.querySelector(".particles");
+
+for(let i=0;i<600;i++){
+
+let particle=document.createElement("span");
+
+particle.innerHTML=["✨","💖","🌸","⭐"][Math.floor(Math.random()*4)];
+
+particle.style.left=Math.random()*100+"%";
+
+particle.style.fontSize=Math.random()*20+10+"px";
+
+particle.style.animationDuration=Math.random()*10+10+"s";
+
+particle.style.animationDelay=Math.random()*5+"s";
+
+particles.appendChild(particle);
+
+}
+
+/* RAIN */
+
+let rain=document.querySelector(".rain");
+
+for(let i=0;i<200;i++){
+
+let drop=document.createElement("div");
+
+drop.className="drop";
+
+drop.style.left=Math.random()*100+"%";
+
+drop.style.animationDuration=Math.random()*0.5+0.5+"s";
+
+drop.style.animationDelay=Math.random()*2+"s";
+
+rain.appendChild(drop);
+
+}
+
+/* PAGE SYSTEM */
+
+let currentPage=0;
+
+const pages=document.querySelectorAll(".page");
+
+function nextPage(){
+
+pages[currentPage].classList.remove("active");
+
+currentPage++;
+
+pages[currentPage].classList.add("active");
+
+if(currentPage===4){
+
+showChats();
+
+}
+
+}
+
+function restartPages(){
+
+pages[currentPage].classList.remove("active");
+
+currentPage=0;
+
+pages[currentPage].classList.add("active");
+
+}
+
+/* HEART CURSOR */
+
+document.addEventListener("mousemove",(e)=>{
+
+let heart=document.createElement("div");
+
+heart.className="cursor";
+
+heart.innerHTML="💖";
+
+heart.style.left=e.pageX+"px";
+
+heart.style.top=e.pageY+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},1000);
+
+});
+
+/* TYPING */
+
+const text="Ek chota sa surprise hai 😭❤️ But warning ⚠️ Andar bohot zyada cuteness aur hidden pyaar ho sakta hai 👀✨";
+
+let i=0;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,50);
+
+}
+
+}
+
+typing();
+
+/* CHAT */
+
+function showChats(){
+
+let msgs=document.querySelectorAll(".msg");
+
+msgs.forEach((msg,index)=>{
+
+setTimeout(()=>{
+
+msg.style.display="block";
+
+},index*1200);
+
+});
+
+}
+
+/* POPUP */
+
+function showPopup(){
+
+document.getElementById("popup").style.display="block";
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display="none";
+
+}
+
+/* TIMER */
+
+const startDate=new Date("2025-01-01");
+
+function updateTimer(){
+
+const now=new Date();
+
+const diff=now-startDate;
+
+const days=Math.floor(diff/(1000*60*60*24));
+
+document.getElementById("timer").innerHTML=days+" Days ❤️";
+
+}
+
+setInterval(updateTimer,1000);
+
+updateTimer();
+
+/* MINI GAME */
+
+let score=0;
+
+const gameArea=document.getElementById("gameArea");
+
+for(let i=0;i<20;i++){
+
+let heart=document.createElement("div");
+
+heart.className="tapHeart";
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*90+"%";
+
+heart.style.animationDuration=Math.random()*4+4+"s";
+
+heart.onclick=()=>{
+
+score++;
+
+document.getElementById("score").innerHTML="Score: "+score;
+
+heart.style.display="none";
+
+};
+
+gameArea.appendChild(heart);
+
+}
+
+/* GYROSCOPE EFFECT */
+
+document.addEventListener("mousemove",(e)=>{
+
+let x=(window.innerWidth/2-e.pageX)/40;
+
+let y=(window.innerHeight/2-e.pageY)/40;
+
+document.body.style.transform=
+"rotateY("+x+"deg) rotateX("+y+"deg)";
+
+});
+
+</script>
+
+</body>
+</html>
